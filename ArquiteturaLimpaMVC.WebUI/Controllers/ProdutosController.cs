@@ -1,5 +1,6 @@
 ﻿using ArquiteturaLimpaMVC.Aplicacao.DTOs;
 using ArquiteturaLimpaMVC.Aplicacao.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -82,6 +83,7 @@ namespace ArquiteturaLimpaMVC.WebUI.Controllers
             return View(produtoDTO);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost(), ActionName(nameof(Remover))]
         public async Task<IActionResult> ConfirmarRemocao(int? id)
         {

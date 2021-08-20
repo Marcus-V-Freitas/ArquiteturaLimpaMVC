@@ -1,10 +1,12 @@
 ﻿using ArquiteturaLimpaMVC.Aplicacao.DTOs;
 using ArquiteturaLimpaMVC.Aplicacao.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace ArquiteturaLimpaMVC.WebUI.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         private readonly ICategoriaService _categoriaService;

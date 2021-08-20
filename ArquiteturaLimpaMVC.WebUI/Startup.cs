@@ -1,3 +1,4 @@
+using ArquiteturaLimpaMVC.Dominio.Conta;
 using ArquiteturaLimpaMVC.Infra.Ioc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,7 +25,7 @@ namespace ArquiteturaLimpaMVC.WebUI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ISeedUsuarioRoleInicial seedUsuarioRoleInicial)
         {
             if (env.IsDevelopment())
             {
@@ -41,6 +42,10 @@ namespace ArquiteturaLimpaMVC.WebUI
 
             app.UseRouting();
 
+            seedUsuarioRoleInicial.SeedRoles();
+            seedUsuarioRoleInicial.SeedUsuario();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
