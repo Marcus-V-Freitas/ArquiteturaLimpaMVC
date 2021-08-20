@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArquiteturaLimpaMVC.Infra.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArquiteturaLimpaMVC.WebUI", "ArquiteturaLimpaMVC.WebUI\ArquiteturaLimpaMVC.WebUI.csproj", "{1F48C5BE-7B58-4668-90DB-4F2B2DA0914C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArquiteturaLimpaMVC.Dominio.Testes", "ArquiteturaLimpaMVC.Dominio.Testes\ArquiteturaLimpaMVC.Dominio.Testes.csproj", "{1962EC6F-1364-4A0A-AB30-C7A877692BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArquiteturaLimpaMVC.Dominio.Testes", "ArquiteturaLimpaMVC.Dominio.Testes\ArquiteturaLimpaMVC.Dominio.Testes.csproj", "{1962EC6F-1364-4A0A-AB30-C7A877692BBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArquiteturaLimpaMVC.API", "ArquiteturaLimpaMVC.API\ArquiteturaLimpaMVC.API.csproj", "{14115F00-C3D7-4735-AB6C-6A88AC666542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1962EC6F-1364-4A0A-AB30-C7A877692BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1962EC6F-1364-4A0A-AB30-C7A877692BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1962EC6F-1364-4A0A-AB30-C7A877692BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14115F00-C3D7-4735-AB6C-6A88AC666542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14115F00-C3D7-4735-AB6C-6A88AC666542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14115F00-C3D7-4735-AB6C-6A88AC666542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14115F00-C3D7-4735-AB6C-6A88AC666542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
