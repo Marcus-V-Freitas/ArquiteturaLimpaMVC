@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Categorias\Detalhes.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.9" />
     <PackageReference Include="microsoft.entityframeworkcore.design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>
@@ -15,6 +19,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArquiteturaLimpaMVC.Infra.Ioc\ArquiteturaLimpaMVC.Infra.Ioc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Categorias\Detalhes.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Categorias\Detalhes.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Categorias\Detalhes.cshtml" />
   </ItemGroup>
 
 </Project>
