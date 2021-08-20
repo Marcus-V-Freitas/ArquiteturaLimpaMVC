@@ -11,7 +11,7 @@ namespace ArquiteturaLimpaMVC.Dominio.Testes
         [Fact(DisplayName = "CriarProdutoValido")]
         public void CriarProdutoValido()
         {
-            Action acao = () => new Produto(1, "Argo","Carro novo",9.99m,99,"Imagem Produto");
+            Action acao = () => new Produto(1, "Argo", "Carro novo", 9.99m, 99, "Imagem Produto");
             acao.Should()
                 .NotThrow<ValidacaoDominioException>();
         }
@@ -70,11 +70,5 @@ namespace ArquiteturaLimpaMVC.Dominio.Testes
                 .Throw<ValidacaoDominioException>()
                 .WithMessage("O valor do estoque é inválido!");
         }
-
-
-
-
-
-
     }
 }

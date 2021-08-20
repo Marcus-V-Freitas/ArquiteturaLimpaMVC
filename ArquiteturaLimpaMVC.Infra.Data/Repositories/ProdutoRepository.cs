@@ -32,14 +32,9 @@ namespace ArquiteturaLimpaMVC.Infra.Data.Repositories
 
         public async Task<Produto> ProdutoPorIdAsync(int? id)
         {
-            return await _context.Produtos.FindAsync(id);
-        }
-
-        public async Task<Produto> ProdutoPorIdCategoriaAsync(int? id)
-        {
             return await _context.Produtos
-                                 .Include(x => x.Categoria)
-                                 .SingleOrDefaultAsync(x => x.Id == id);
+                                  .Include(x => x.Categoria)
+                                  .SingleOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Produto> RemoverAsync(Produto produto)

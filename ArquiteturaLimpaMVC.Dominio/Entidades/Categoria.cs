@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ArquiteturaLimpaMVC.Dominio.Entidades
 {
-    public sealed class Categoria: Entity
+    public sealed class Categoria : Entity
     {
         public string Nome { get; private set; }
 
@@ -13,13 +13,13 @@ namespace ArquiteturaLimpaMVC.Dominio.Entidades
             ValidarDominio();
         }
 
-        public Categoria(int id, string nome): 
+        public Categoria(int id, string nome) :
                     this(nome)
         {
             Id = id;
-            ValidacaoDominioException.Validar(id < 0, "Id inválido!");                       
-        }       
-        
+            ValidacaoDominioException.Validar(id < 0, "Id inválido!");
+        }
+
         public void Atualizar(string nome)
         {
             Nome = nome;
@@ -30,12 +30,11 @@ namespace ArquiteturaLimpaMVC.Dominio.Entidades
 
         protected override void ValidarDominio()
         {
-            ValidacaoDominioException.Validar(string.IsNullOrEmpty(Nome), 
+            ValidacaoDominioException.Validar(string.IsNullOrEmpty(Nome),
                                               "O nome é obrigatório!");
 
-            ValidacaoDominioException.Validar(Nome.Length < 3, 
+            ValidacaoDominioException.Validar(Nome.Length < 3,
                                               "O nome deve ser maior que 3 caracteres!");
-
         }
     }
 }

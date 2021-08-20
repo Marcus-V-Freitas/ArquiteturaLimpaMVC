@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="8.1.1" />
+    <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ArquiteturaLimpaMVC.Aplicacao\ArquiteturaLimpaMVC.Aplicacao.csproj" />
     <ProjectReference Include="..\ArquiteturaLimpaMVC.Dominio\ArquiteturaLimpaMVC.Dominio.csproj" />
     <ProjectReference Include="..\ArquiteturaLimpaMVC.Infra.Data\ArquiteturaLimpaMVC.Infra.Data.csproj" />
