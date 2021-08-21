@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 namespace ArquiteturaLimpaMVC.API
@@ -28,11 +27,9 @@ namespace ArquiteturaLimpaMVC.API
                     });
 
             services.AddInfraEstruturaAPI(Configuration);
+            services.AddInfraEstruturaJWT(Configuration);
+            services.AddInfraEstruturaSwagger(Configuration);
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ArquiteturaLimpaMVC.API", Version = "v1" });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,9 +43,9 @@ namespace ArquiteturaLimpaMVC.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStatusCodePages();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

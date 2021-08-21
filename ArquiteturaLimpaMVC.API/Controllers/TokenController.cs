@@ -1,5 +1,6 @@
 ﻿using ArquiteturaLimpaMVC.API.Models;
 using ArquiteturaLimpaMVC.Dominio.Conta;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -24,8 +25,28 @@ namespace ArquiteturaLimpaMVC.API.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost("Login")]
+        [Authorize]
+        [HttpPost(nameof(CriarUsuario))]
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public async Task<IActionResult> CriarUsuario([FromBody] LoginModel loginModel)
+        {
+            var resultado = await _authenticate.RegistrarUsuario(loginModel.Email, loginModel.Senha);
+
+            if (resultado)
+            {
+                return Ok($"Usuário {loginModel.Email} foi criado com sucesso");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Login Inválido");
+                return BadRequest(ModelState);
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost(nameof(Login))]
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
+
         {
             var resultado = await _authenticate.Authenticate(loginModel.Email, loginModel.Senha);
 

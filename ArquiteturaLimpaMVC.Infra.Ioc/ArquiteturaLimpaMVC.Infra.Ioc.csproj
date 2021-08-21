@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -7,6 +7,10 @@
   <ItemGroup>
     <PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="8.1.1" />
     <PackageReference Include="mediatr.extensions.microsoft.dependencyinjection" Version="9.0.0" />
+    <PackageReference Include="microsoft.aspnetcore.authentication.jwtbearer" Version="5.0.9" />
+    <PackageReference Include="Swashbuckle.aspnetcore.swagger" Version="6.1.5" />
+    <PackageReference Include="Swashbuckle.aspnetcore.swaggergen" Version="6.1.5" />
+    <PackageReference Include="Swashbuckle.aspnetcore.swaggerui" Version="6.1.5" />
   </ItemGroup>
 
   <ItemGroup>
